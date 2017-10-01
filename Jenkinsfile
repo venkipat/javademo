@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-
+@Library('shared-libraries') _
 import jenkins.*
 	
 pipeline {
@@ -8,10 +8,10 @@ pipeline {
         label 'java'
     }
 	
-    @Library('shared-libraries') _
-    def builder = new jenkins.JenkinsPipelineBootstrap().createBuilder()
-	
     stages {
+	    
+	def builder = new JenkinsPipelineBootstrap().createBuilder()
+	    
         stage('clone') {
             steps {
                 echo 'cloning...'
