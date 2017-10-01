@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 @Library('shared-libraries') _
-import jenkins.*
+
 	
 pipeline {
 	
@@ -9,7 +9,8 @@ pipeline {
     }
 	
     stages {
-	    
+	
+	import jenkins.*    
 	def builder = new JenkinsPipelineBootstrap().createBuilder()
 	    
         stage('clone') {
