@@ -11,9 +11,11 @@ pipeline {
     stages {
 	 stage('init') {
             steps {
-		load 'jenkins.*'    
-                def b = JenkinsPipelineBootsrap.JenkinsPipelineBootsrap()
-                def builder =  b.createBuilder()              
+		script
+		    {
+		      import jenkins.*
+	              def builder = new JenkinsPipelineBootstrap().createBuilder()		      
+		    }              
             }
         }
         stage('clone') {
