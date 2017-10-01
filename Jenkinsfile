@@ -10,7 +10,7 @@ pipeline {
 	
     stages {
 	
-	import jenkins.*    
+	load 'jenkins.*'    
 	def builder = new JenkinsPipelineBootstrap().createBuilder()
 	    
         stage('clone') {
