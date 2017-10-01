@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 @Library('shared-libraries') _
-
+import jenkins.*
 	
 pipeline {
 	
@@ -13,7 +13,7 @@ pipeline {
             steps {
 		script
 		    {
-		      load 'jenkins.*'
+		      
 	              def builder = new JenkinsPipelineBootstrap().createBuilder()		      
 		    }              
             }
