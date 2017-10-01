@@ -1,10 +1,6 @@
 #!/usr/bin/env groovy
 
-pipeline {
-
-    agent {
-        label 'java'
-    }
+node ('java') {
 
     stages {
         stage('clone') {
