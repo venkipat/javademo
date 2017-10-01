@@ -7,13 +7,13 @@ pipeline {
     agent {
         label 'java'
     }
+    
+    def a = load 'jenkins.*'    
+    def builder = a.JenkinsPipelineBootsrap
+    def b =  builder.JenkinsPipelineBootstrap().createBuilder()
 	
     stages {
-	
-	def a = load 'jenkins.*'    
-	def builder = a.JenkinsPipelineBootsrap
-	def b =  builder.JenkinsPipelineBootstrap().createBuilder()
-	    
+	 
         stage('clone') {
             steps {
                 echo 'cloning...'
