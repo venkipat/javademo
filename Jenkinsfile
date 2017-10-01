@@ -11,8 +11,8 @@ pipeline {
     stages {
 	 stage('init') {
             steps {
-		load 'jenkins.*'    
-                def b = new JenkinsPipelineBootsrap()
+		def a = load 'jenkins.*'    
+                def b = new a.JenkinsPipelineBootsrap()
                 def builder =  b.createBuilder()              
             }
         }
