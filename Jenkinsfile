@@ -2,6 +2,7 @@
 @Library('shared-libraries') _
 import jenkins.*
 def pipelineUtility
+def pipelineMethods
 	
 pipeline {
 	
@@ -15,7 +16,7 @@ pipeline {
 		script
 		    {
 		      pipelineUtility = new JenkinsPipelineBuilder()
-                      pipelineUtility.initialize() 		      
+                      pipelineMethods = pipelineUtility.initialize() 		      
 		    }              
             }
         }
@@ -23,7 +24,7 @@ pipeline {
             steps {  
 		    script {    
                        String project = 'javademo'
-                       pipelineUtility.clone(project)
+                       pipelineMethods.clone(project)
 		    }
             }
         }
