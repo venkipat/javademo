@@ -21,8 +21,8 @@ pipeline {
         }
         stage('clone') {
             steps {  
-                echo 'cloning...'
-                git url: 'https://github.com/venkipat/javademo.git'
+                String project = 'javademo'
+                pipelineUtility.clone(project)
             }
         }
         stage('compile') {
