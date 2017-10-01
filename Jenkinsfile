@@ -12,7 +12,7 @@ pipeline {
 	 stage('init') {
             steps {
 		def a = load 'jenkins.*'    
-                def b = new a.JenkinsPipelineBootsrap()
+                def b = a.JenkinsPipelineBootsrap()
                 def builder =  b.createBuilder()              
             }
         }
