@@ -1,17 +1,16 @@
 #!/usr/bin/env groovy
 
-
+import jenkins.*
 	
 pipeline {
 	
     agent {
         label 'java'
     }
+	
     @Library('shared-libraries') _
-
-    import jenkins.*
-
-    def builder = new JenkinsPipelineBootstrap().createBuilder() 	
+    def builder = new jenkins.JenkinsPipelineBootstrap().createBuilder()
+	
     stages {
         stage('clone') {
             steps {
