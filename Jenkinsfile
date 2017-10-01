@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-node('java-slave') {
+pipeline {
 	
     agent {
         label 'java'
