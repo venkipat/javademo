@@ -13,7 +13,7 @@ pipeline {
             steps {
 		script
 		    {
-		      import jenkins.*
+		      load 'jenkins.*'
 	              def builder = new JenkinsPipelineBootstrap().createBuilder()		      
 		    }              
             }
