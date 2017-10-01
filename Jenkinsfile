@@ -8,15 +8,16 @@ pipeline {
         label 'java'
     }
     
-    
-	
     stages {
-	 
-        stage('clone') {
+	 stage('init') {
             steps {
 		def a = load 'jenkins.*'    
-    def builder = a.JenkinsPipelineBootsrap
-    def b =  builder.JenkinsPipelineBootstrap().createBuilder()    
+                def builder = a.JenkinsPipelineBootsrap
+                def b =  builder.JenkinsPipelineBootstrap().createBuilder()               
+            }
+        }
+        stage('clone') {
+            steps {  
                 echo 'cloning...'
                 git url: 'https://github.com/venkipat/javademo.git'
             }
