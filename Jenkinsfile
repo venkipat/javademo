@@ -21,8 +21,10 @@ pipeline {
         }
         stage('clone') {
             steps {  
-                String project = 'javademo'
-                pipelineUtility.clone(project)
+		    script {    
+                       String project = 'javademo'
+                       pipelineUtility.clone(project)
+		    }
             }
         }
         stage('compile') {
