@@ -16,7 +16,7 @@ pipeline {
 		script
 		    {
 		      pipelineUtility = new JenkinsPipelineBuilder()
-                      pipelineMethods = pipelineUtility.initialize() 		      
+                      pipelineMethods = pipelineUtility.initialize().getPipelineSteps() 		      
 		    }              
             }
         }
